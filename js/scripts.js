@@ -79,13 +79,10 @@ $(document).ready(function() {
     var name = $('input#name').val();
     var size = $('select#size').val();
 
-    debugger;
-
     var order = new Order(name);
     var pizza = new Pizza(size);
 
     $("input:checkbox[name=toppings]:checked").each(function(){
-
         var toppingName = $(this).val().split(':')[0];
         var toppingPrice = parseInt($(this).val().split(':')[1]);
 
@@ -94,8 +91,6 @@ $(document).ready(function() {
     });
 
     order.pizzas.push(pizza);
-
-    debugger;
 
     var orderPrice = order.price();
 
