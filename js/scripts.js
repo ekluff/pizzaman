@@ -8,13 +8,13 @@ function Size(name){
   this.basePrice = 0;
   this.toppingsMultiplier = 1;
 
-  if (this.name = "S") {
+  if (this.name === "S") {
     this.basePrice = 14;
     this.toppingsMultiplier = 1;
-  } else if (this.name = "M") {
+  } else if (this.name === "M") {
     this.basePrice = 16;
     this.toppingsMultiplier = 1.3;
-  } else if (this.name = "L") {
+  } else if (this.name === "L") {
     this.basePrice = 20;
     this.toppingsMultiplier = 1.7;
   } else {
