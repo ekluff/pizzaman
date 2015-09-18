@@ -69,16 +69,34 @@ Order.prototype.price = function() {
 
   return price;
 };
-//
-// Thing.prototype.doThing = function() {
-//   // do stuff
-// };
-//
-// $(document).ready(function() {
-//   var thing = new Thing;
-//
-//   $("#elementid").click(function(event) {
-//     $(this).text(text to change to);
-//     thing.runSomeFunction();
-//   });
-// });
+
+$(document).ready(function() {
+  $('#priceSentence').hide();
+
+  $('form#orderForm').submit(function(event){
+    event.preventDefault();
+    var name = $('input#name').val();
+    var size = $('input#size').val();
+
+    var order = new Order(name);
+    var pizza = new Pizza(size);
+
+    for (i = 0; i<$('.toppings').length; i++) {
+      var val = $('.toppings')[i].val();
+      var topping = new Topping(val);
+      pizza.toppings.push(topping);
+    };
+
+    order.pizzas.push(pizza);
+
+    var orderPrice = order.price();
+
+    $('#orderPrice').text(orderPrice);
+    $('#priceSentence').show();
+
+  });
+
+    $(this).text(text to change to);
+    thing.runSomeFunction();
+  });
+});
