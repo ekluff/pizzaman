@@ -29,4 +29,4 @@ describe('Size', function() {
 // prototype functions:
 // pizza.prototype.cost => calculate cost
 
-pizza has size and toppings. cost function
+// pizza has size and toppings. cost function multiplies topping prices by Size.toppingsMultiplier and adds to Size.basePrice, 
