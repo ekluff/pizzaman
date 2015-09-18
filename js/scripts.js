@@ -1,6 +1,9 @@
 function Pizza(size){
   this.size = size;
   this.toppings = [];
+
+  var cheese = new Topping("cheese", 0);
+  this.toppings.push(cheese);
 };
 
 function Size(name){
@@ -24,9 +27,9 @@ function Size(name){
   };
 };
 
-function Topping(name, cost) {
+function Topping(name, basePrice) {
   this.name = name;
-  this.cost = cost;
+  this.cost = basePrice;
 };
 //
 // Thing.prototype.doThing = function() {
