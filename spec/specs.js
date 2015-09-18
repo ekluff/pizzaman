@@ -9,11 +9,21 @@ describe('Pizza', function() {
 describe('Size', function() {
     it("initiates initiates a new size", function() {
         var medium = new Size("M");
-        expect(medium.name).to.equal("M")
+        expect(medium.name).to.equal("M");
         expect(medium.basePrice).to.equal(16);
         expect(medium.toppingsMultiplier).to.eql(1.3);
     });
 });
+
+describe('Topping', function() {
+    it("initiates initiates a new topping", function() {
+        var pepperoni = new Topping("pepperoni", 4);
+        expect(pepperoni.name).to.equal("pepperoni");
+        expect(pepperoni.basePrice).to.equal(4);
+    });
+});
+
+
 
 
 
@@ -29,4 +39,4 @@ describe('Size', function() {
 // prototype functions:
 // pizza.prototype.cost => calculate cost
 
-// pizza has size and toppings. cost function multiplies topping prices by Size.toppingsMultiplier and adds to Size.basePrice, 
+// pizza has size and toppings. cost function multiplies topping prices by Size.toppingsMultiplier and adds to Size.basePrice,

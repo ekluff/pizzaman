@@ -23,6 +23,11 @@ function Size(name){
     this.toppingsMultiplier = 600;
   };
 };
+
+function Topping(name, cost) {
+  this.name = name;
+  this.cost = cost;
+};
 //
 // Thing.prototype.doThing = function() {
 //   // do stuff
