@@ -1,9 +1,15 @@
 function Pizza(size){
-  this.size = size;
+  var sizeName = size === undefined ? "S" : size;
+  this.size = new Size (sizeName);
   this.toppings = [];
 
   var cheese = new Topping("cheese", 0);
   this.toppings.push(cheese);
+};
+
+Pizza.prototype.addTopping = function(toppingName) {
+  var topping = new Topping (toppingName, 2);
+  this.toppings.push(topping);
 };
 
 function Size(name){
@@ -29,7 +35,7 @@ function Size(name){
 
 function Topping(name, basePrice) {
   this.name = name;
-  this.cost = basePrice;
+  this.basePrice = basePrice;
 };
 //
 // Thing.prototype.doThing = function() {

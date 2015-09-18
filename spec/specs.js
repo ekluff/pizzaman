@@ -6,15 +6,18 @@ describe('Pizza', function() {
 
     it("has cheese by default", function() {
         var testPizza = new Pizza("M");
-        expect(testPizza.size).to.equal("M");
         expect(testPizza.toppings[0].name).to.eql("cheese");
     });
 
-    // it("takes size and toppings", function() {
-    //   var pepperoni = new Topping ("pepperoni", 4);
-    //   var size = new Size("M");
-    //   var pizza = new Pizza ()
-    // });
+    it("starts off small by default", function(){
+      var testPizza = new Pizza();
+      expect(testPizza.size.name).to.equal("S");
+    });
+
+    it("takes size and toppings", function() {
+      var pepperoni = new Topping ("pepperoni", 4);
+      var pizza = new Pizza ()
+    });
 });
 
 describe('Size', function() {
@@ -64,5 +67,6 @@ describe('Topping', function() {
 //
 // prototype functions:
 // pizza.prototype.cost => calculate cost
+// pizza.prototype.add Topping => push topping into pizza
 
 // pizza has size and toppings. cost function multiplies topping prices by Size.toppingsMultiplier and adds to Size.basePrice,
