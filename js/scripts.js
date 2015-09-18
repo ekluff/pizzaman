@@ -48,7 +48,7 @@ function Size(name){
 
 function Topping(name, basePrice) {
   this.name = name;
-  this.basePrice = basePrice === undefined ? 2 : basePrice; // if no price specified defaults to 2
+  this.basePrice = basePrice;
 };
 
 function Order(name) {
@@ -75,28 +75,32 @@ $(document).ready(function() {
 
   $('form#orderForm').submit(function(event){
     event.preventDefault();
+
     var name = $('input#name').val();
-    var size = $('input#size').val();
+    var size = $('select#size').val();
+
+    debugger;
 
     var order = new Order(name);
     var pizza = new Pizza(size);
 
-    for (i = 0; i<$('.toppings').length; i++) {
-      var val = $('.toppings')[i].val();
-      var topping = new Topping(val);
-      pizza.toppings.push(topping);
-    };
+    $("input:checkbox[name=toppings]:checked").each(function(){
+
+        var toppingName = $(this).val().split(':')[0];
+        var toppingPrice = parseInt($(this).val().split(':')[1]);
+
+        var topping = new Topping(toppingName, toppingPrice);
+        pizza.toppings.push(topping);
+    });
 
     order.pizzas.push(pizza);
+
+    debugger;
 
     var orderPrice = order.price();
 
     $('#orderPrice').text(orderPrice);
     $('#priceSentence').show();
 
-  });
-
-    $(this).text(text to change to);
-    thing.runSomeFunction();
   });
 });

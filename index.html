@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Pizza Man</title>
+</head>
+<body>
+
+    <div class="container">
+
+
+    <h1>order from the Pizza Man</h1>
+
+    <form id="orderForm">
+        <input type="text" id="name" name="name" placeholder="Your Name" required><br><br>
+
+        <select id="size" name="size" required>
+            <option disabled selected>choose a size</option>
+            <option value="S">small</option>
+            <option value="M">medium</option>
+            <option value="L">large</option>
+        </select>
+
+        <br>
+        <br>
+
+        <input type="checkbox" name="toppings" value="'pepperoni':3">pepperoni, $3 base</input><br>
+        <input type="checkbox" name="toppings" value="'sausage':3">sausage, $3</input><br>
+        <input type="checkbox" name="toppings" value="'peppers':2">peppers, $2</input><br>
+        <input type="checkbox" name="toppings" value="'onions':1">onions, $1</input><br>
+        <input type="checkbox" name="toppings" value="'garlic':1">garlic, $1</input><br>
+        <input type="checkbox" name="toppings" value="'bacon':4">bacon, $4</input><br>
+        <input type="checkbox" name="toppings" value="'tomatoes':2">tomatoes, $2</input><br>
+        <input type="checkbox" name="toppings" value="'marijuana':400">marijuana, $400</input><br>
+
+        <br>
+
+        <button name="submit" type="submit">place order</button>
+
+
+    </form>
+    <br>
+
+    <h4 id="priceSentence">Your order will cost $<span id="orderPrice"></span>.</h4>
+
+    </div>
+</body>
+</html>
