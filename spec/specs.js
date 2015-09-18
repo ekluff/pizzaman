@@ -15,9 +15,13 @@ describe('Pizza', function() {
     });
 
     it("takes size and toppings", function() {
-      var pepperoni = new Topping ("pepperoni", 4);
-      var pizza = new Pizza ()
+      var pizza = new Pizza ("M");
+      pizza.addTopping("pepperoni");
+
+      expect(pizza.size.name).to.equal("M");
+      expect(pizza.toppings[1].name).to.equal("pepperoni");
     });
+
 });
 
 describe('Size', function() {
@@ -36,19 +40,13 @@ describe('Topping', function() {
         expect(pepperoni.basePrice).to.equal(4);
     });
 });
-//
-// describe('Order', function() {
-//     it("initiates a new order", function() {
-//         var topping = new Topping ("pepperoni", 4);
-//         var size = new Size("M");
-//         var pizza = new Pizza ()
-//
-//         var order = new Order();
-//         var pepperoni = new Topping("pepperoni", 4);
-//         expect(pepperoni.name).to.equal("pepperoni");
-//         expect(pepperoni.basePrice).to.equal(4);
-//     });
-// });
+
+describe('Order', function() {
+    it("initiates a new order", function() {
+        var order = new Order();
+        expect(typeof order).to.equal("object");
+    });
+});
 
 
 
