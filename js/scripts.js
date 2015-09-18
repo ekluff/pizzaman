@@ -43,6 +43,10 @@ function Order(name) {
   this.pizzas = [];
   this.price = 0;
 };
+
+Order.prototype.order = function(pizza) {
+  this.pizzas.push(pizza);
+};
 //
 // Thing.prototype.doThing = function() {
 //   // do stuff

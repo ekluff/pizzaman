@@ -46,6 +46,13 @@ describe('Order', function() {
         var order = new Order();
         expect(typeof order).to.equal("object");
     });
+
+    it("takes pizzas", function() {
+      var pizza = new Pizza();
+      var order = new Order();
+      order.order(pizza);
+      expect(order.pizzas[0].toppings[0].name).to.equal("cheese");
+    });
 });
 
 
