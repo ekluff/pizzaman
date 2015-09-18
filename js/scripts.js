@@ -12,6 +12,19 @@ Pizza.prototype.addTopping = function(toppingName) {
   this.toppings.push(topping);
 };
 
+Pizza.prototype.price = function() {
+  var basePrice = this.size.basePrice;
+  var toppingsMultiplier = this.size.toppingsMultiplier;
+  var toppingsBasePrice = 0;
+
+  this.toppings.forEach(function(topping) {
+    toppingsBasePrice += topping.basePrice;
+  });
+
+  var price = basePrice + (toppingsBasePrice * toppingsMultiplier);
+  return price;
+};
+
 function Size(name){
   this.name = name;
   this.basePrice = 0;
@@ -41,11 +54,20 @@ function Topping(name, basePrice) {
 function Order(name) {
   this.name = name;
   this.pizzas = [];
-  this.price = 0;
 };
 
 Order.prototype.order = function(pizza) {
   this.pizzas.push(pizza);
+};
+
+Order.prototype.price = function() {
+  var price = 0;
+
+  this.pizzas.forEach(function(pizza) {
+    price += pizza.price();
+  });
+
+  return price;
 };
 //
 // Thing.prototype.doThing = function() {

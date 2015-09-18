@@ -22,6 +22,11 @@ describe('Pizza', function() {
       expect(pizza.toppings[1].name).to.equal("pepperoni");
     });
 
+    it("calculates a price", function() {
+      var pizza = new Pizza("M");
+      pizza.addTopping("anchovies");
+      expect(pizza.price()).to.equal(18.6);
+    });
 });
 
 describe('Size', function() {
@@ -52,6 +57,17 @@ describe('Order', function() {
       var order = new Order();
       order.order(pizza);
       expect(order.pizzas[0].toppings[0].name).to.equal("cheese");
+    });
+
+    it("calculates a price", function() {
+      var pizza1 = new Pizza();
+      var pizza2 = new Pizza();
+      var order = new Order();
+
+      order.order(pizza1);
+      order.order(pizza2);
+
+      expect(order.price()).to.equal(28);
     });
 });
 
